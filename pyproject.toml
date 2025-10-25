@@ -1,0 +1,16 @@
+[project]
+name = "autopgd"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "autoattack",
+    "matplotlib>=3.10.6",
+    "numpy>=2.2.6",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+]
+
+[tool.uv.sources]
+autoattack = { git = "https://github.com/fra31/auto-attack" }
