@@ -42,8 +42,8 @@ def main():
     testloader = load_cifar10_test(num_samples=10000)
 
     for model_path in [
-        "./resnet18_cifar10_standard.pth",
-        "./resnet18_cifar10_robust.pth",
+        "./weights/resnet18_cifar10_standard.pth",
+        "./weights/resnet18_cifar10_robust.pth",
     ]:
         model = load_model(model_path).to(device)
         model.eval()
@@ -51,7 +51,7 @@ def main():
         print("Running PGD attack...")
 
         def pgd_wrapper(m, x, y):
-            return pgd(m, x, y, epsilon=8 / 255, alpha=3 / 255, iters=10)
+            return pgd(m, x, y, epsilon=2 / 255, alpha=3 / 255, iters=10)
 
         pgd_results = evaluate_attack(
             model, testloader, pgd_wrapper, "PGD (10 iters)", device
@@ -60,7 +60,7 @@ def main():
         print("Running AutoPGD attack...")
 
         def autopgd_wrapper(m, x, y):
-            return autopgd(m, x, y, epsilon=8 / 255, iters=100, n_restarts=1)
+            return autopgd(m, x, y, epsilon=2 / 255, iters=100, n_restarts=1)
 
         autopgd_results = evaluate_attack(
             model,
