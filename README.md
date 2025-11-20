@@ -74,7 +74,6 @@ robustness/
 │   ├── track_convergence.py  # Convergence analysis
 │   ├── analyze_results.py    # Results analysis
 │   └── visualize_adversarial.py  # Visualization tools
-├── attack/                # Legacy attack implementations
 ├── run_exp.sh            # Complete experimental pipeline
 ├── pyproject.toml        # Project configuration
 └── README.md
