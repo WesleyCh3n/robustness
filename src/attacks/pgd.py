@@ -1,5 +1,9 @@
 """
 Projected Gradient Descent (PGD) Attack
+Standard implementation for comparison
+
+Author: WesleyCh3n
+Date: 2025-11-17
 """
 
 import torch
@@ -13,7 +17,7 @@ class PGDAttack:
 
         Args:
             eps: Maximum perturbation (L-infinity norm)
-            alpha: Step size
+            alpha: Step size (fixed)
             steps: Number of attack iterations
             random_start: Whether to start from random point in epsilon ball
         """

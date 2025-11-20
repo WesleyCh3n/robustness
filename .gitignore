@@ -11,3 +11,6 @@ wheels/
 
 data/
 weights/
+figures/
+results/
+checkpoints/
